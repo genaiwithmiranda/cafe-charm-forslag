@@ -900,12 +900,237 @@ footer .addrs span{white-space:nowrap}
   .pk-six .pk-sub{display:none}
   .pk-from{margin-top:6px;padding:5px 9px;font-size:11px}
 }
+
+/* ---------- Ringknappar ---------- */
+.callbtn{display:inline-flex!important;align-items:center;gap:10px;height:46px;padding:0 20px 0 16px;border-radius:999px;background:var(--charm);color:#fff!important;font-size:12px!important;letter-spacing:.14em;text-transform:uppercase;font-weight:600;border:0!important;text-decoration:none!important;transition:background .3s,transform .3s var(--ease),gap .3s var(--ease);margin-top:14px}
+.callbtn svg{width:18px;height:18px;flex:none}
+.callbtn b{font-weight:500;letter-spacing:.02em;text-transform:none;font-size:15px;opacity:.92}
+.callbtn:hover{background:var(--deep);transform:translateY(-2px);gap:12px}
+.callbtn.light{background:var(--mist);color:var(--abyss)!important;margin-top:4px}
+.callbtn.light:hover{background:#fff}
+.cafe .callbtn{align-self:flex-start}
+@media (max-width:820px){.callbtn{height:50px;padding:0 22px 0 18px}}
+
+/* ---------- Prislapp på bilden ---------- */
+.pk-pic{position:relative;width:100%}
+.pk-six .pk-from{position:absolute;right:-4%;bottom:6%;z-index:2;margin:0;white-space:nowrap;background:var(--charm);color:var(--paper);padding:8px 14px;border-radius:999px;font-size:12.5px;letter-spacing:.05em;font-weight:600;transform:rotate(var(--r,-6deg));box-shadow:0 8px 16px -8px rgba(1,38,51,.55);transition:transform .4s var(--ease),background .3s}
+.pk-six .pk-from::before{content:"✦";margin-right:6px;color:var(--mist)}
+.pk-item:hover .pk-from{background:var(--deep);color:var(--paper);transform:rotate(0deg) scale(1.06)}
+@media (max-width:820px){.pk-six .pk-from{right:-8%;bottom:2%;padding:5px 9px;font-size:10px}.pk-six .pk-from::before{margin-right:4px}}
+
+/* större prislappar */
+.pk-six .pk-from{font-size:15px!important;padding:10px 16px!important;right:-6%!important;bottom:4%!important}
+@media (max-width:820px){.pk-six .pk-from{font-size:12.5px!important;padding:7px 11px!important;right:-10%!important;bottom:0!important}.pk-six .pk-name{margin-top:20px!important}}
+@media (min-width:821px){.pk-six .pk-name{margin-top:26px!important}}
+
+/* ---------- Heron följer dagen ---------- */
+.hero .obj img.hp{transition:none}
+#hero[data-mode="fika"] .obj img.hp{width:min(55vmin,620px)!important}
+#hero[data-mode="kvall"] .obj img.hp{width:min(60vmin,680px)!important}
+#hero[data-mode="lunch"] .obj img.hp{width:min(52vmin,590px)!important;translate:0 -14%;-webkit-mask-image:radial-gradient(ellipse 48% 31% at 50% 64%,#000 95%,transparent 100%);mask-image:radial-gradient(ellipse 48% 31% at 50% 64%,#000 95%,transparent 100%)}
+.tidval{position:absolute;z-index:30;left:50%;top:86px;transform:translateX(-50%);display:none;align-items:center;gap:4px;padding:5px;border-radius:999px;background:rgba(255,255,255,.9);border:1px solid #e3d9ca;box-shadow:0 10px 24px -14px rgba(1,38,51,.35);font-size:12px}
+.tidval.show{display:flex}
+.tidval span{padding:0 8px 0 10px;color:#5b7480;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.tidval button{font:inherit;border:0;background:none;cursor:pointer;padding:8px 13px;border-radius:999px;color:var(--ink)}
+.tidval button.on{background:var(--charm);color:#fff}
+@media (max-width:820px){
+  #hero[data-mode="fika"] .obj img.hp{width:min(62vw,390px)!important}
+  #hero[data-mode="kvall"] .obj img.hp{width:min(68vw,420px)!important}
+  #hero[data-mode="lunch"] .obj img.hp{width:min(62vw,390px)!important}
+  .tidval{top:78px;font-size:11px}.tidval span{display:none}.tidval button{padding:7px 10px}
+}
+
+/* ---------- Prislapp i heron: en hängetikett från konditoriet ---------- */
+.herotag{position:absolute;z-index:6;left:clamp(24px,8vw,140px);top:calc(40vh + 46px);pointer-events:auto;display:grid;grid-template-columns:auto auto;grid-template-rows:auto auto;column-gap:18px;align-items:center;padding:16px 18px 16px 40px;border-radius:16px;background:var(--paper);color:var(--ink);box-shadow:0 22px 40px -22px rgba(1,38,51,.55),0 0 0 1px rgba(1,38,51,.07);transform:rotate(-4deg);transition:transform .5s var(--ease),box-shadow .4s}
+.herotag::before{content:"";position:absolute;left:15px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--cream);box-shadow:inset 0 1px 2px rgba(1,38,51,.35),0 0 0 2px var(--charm)}
+.herotag::after{content:"";position:absolute;inset:6px;border:1px dashed rgba(1,111,148,.35);border-radius:11px;pointer-events:none}
+.herotag .ht-l{grid-column:1;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--charm);white-space:nowrap}
+.herotag .ht-p{grid-column:1;font-family:var(--serif);font-style:italic;font-size:34px;line-height:1;margin-top:4px;white-space:nowrap}
+.herotag .ht-go{grid-column:2;grid-row:1 / span 2;width:38px;height:38px;border-radius:50%;background:var(--charm);color:#fff;display:grid;place-items:center;font-style:normal;font-size:16px;transition:transform .4s var(--ease),background .3s}
+.herotag:hover{transform:rotate(0deg) translateY(-3px);box-shadow:0 28px 46px -22px rgba(1,38,51,.6),0 0 0 1px rgba(1,38,51,.07)}
+.herotag:hover .ht-go{transform:translateX(3px);background:var(--deep)}
+@media (max-width:820px){
+  .herotag{left:0;right:0;margin:0 auto;width:max-content;top:calc((50% + 47vw + 100% - 5vh - 50px) / 2 - 33px);transform:rotate(-3deg);padding:12px 14px 12px 34px;column-gap:14px}
+  .herotag::before{left:12px;width:9px;height:9px;margin-top:-4.5px}
+  .herotag .ht-l{font-size:9.5px}
+  .herotag .ht-p{font-size:26px}
+  .herotag .ht-go{width:32px;height:32px;font-size:14px}
+}
+#hero[data-mode="fika"] .obj img.hp{width:min(54vmin,600px)!important}
+@media (max-width:820px){#hero[data-mode="fika"] .obj img.hp{width:min(66vw,400px)!important}}
+
+@media (min-width:821px){
+  .herotag{padding:20px 22px 20px 48px;column-gap:22px;top:calc(40vh + 36px)}
+  .herotag::before{left:18px;width:12px;height:12px;margin-top:-6px}
+  .herotag .ht-l{font-size:11.5px}
+  .herotag .ht-p{font-size:44px;margin-top:6px}
+  .herotag .ht-go{width:46px;height:46px;font-size:18px}
+  #hero[data-mode="fika"] .obj img.hp{width:min(62vmin,640px)!important}
+}
+
+@media (min-width:821px) and (max-width:1240px){
+  .hero .corner.r{display:none!important}
+  .herotag{left:auto;right:clamp(20px,4vw,48px);top:auto;bottom:clamp(20px,4vw,40px);transform:rotate(-2deg);padding:14px 16px 14px 38px;column-gap:14px}
+  .herotag::before{left:14px;width:10px;height:10px;margin-top:-5px}
+  .herotag .ht-l{font-size:10px}
+  .herotag .ht-p{font-size:32px;margin-top:4px}
+  .herotag .ht-go{width:36px;height:36px;font-size:15px}
+}
+
+/* ---------- Prislappen hänger vid bakverket den tillhör ---------- */
+#hero{--iw:min(51vmin,570px)}
+#hero[data-mode="lunch"]{--iw:min(52vmin,590px)}
+#hero[data-mode="fika"]{--iw:min(62vmin,640px)}
+#hero[data-mode="kvall"]{--iw:min(60vmin,680px)}
+.herotag{left:auto!important;bottom:auto!important;right:calc(50% + var(--iw) * .5 - 34px)!important;top:calc(50% + var(--iw) * .04)!important;margin:0!important;width:auto!important}
+#hero[data-mode="lunch"] .herotag{top:calc(50% - var(--iw) * .04)!important;right:calc(50% + var(--iw) * .5 - 44px)!important}
+@media (min-width:821px) and (max-width:1240px){.hero .corner.r{display:flex!important}.herotag{transform:rotate(-4deg)}}
+@media (max-width:820px){
+  #hero{--iw:min(56vw,350px)}
+  #hero[data-mode="lunch"]{--iw:min(62vw,390px)}
+  #hero[data-mode="fika"]{--iw:min(66vw,400px)}
+  #hero[data-mode="kvall"]{--iw:min(68vw,420px)}
+  .herotag,#hero[data-mode="lunch"] .herotag{right:auto!important;left:max(14px, calc(50% - var(--iw) * .5 - 10px))!important;top:calc(50% + var(--iw) * .05)!important}
+}
+
+@media (max-width:820px){
+  .herotag{padding:9px 11px 9px 28px!important;column-gap:10px!important;left:14px!important;border-radius:13px}
+  #hero .herotag,#hero[data-mode="lunch"] .herotag{left:14px!important}
+  .herotag::before{left:10px!important;width:8px!important;height:8px!important;margin-top:-4px!important}
+  .herotag::after{inset:4px;border-radius:9px}
+  .herotag .ht-l{font-size:8.5px!important;letter-spacing:.16em}
+  .herotag .ht-p{font-size:22px!important;margin-top:2px}
+  .herotag .ht-go{width:28px!important;height:28px!important;font-size:13px!important}
+}
+
+/* etiketten vänd mot bakverket: hålet närmast produkten, pilen ytterst */
+.herotag{grid-template-columns:auto auto}
+.herotag .ht-go{grid-column:1!important;grid-row:1 / span 2}
+.herotag .ht-l,.herotag .ht-p{grid-column:2!important}
+.herotag .ht-l{grid-row:1}.herotag .ht-p{grid-row:2}
+.herotag::before{left:auto!important;right:15px}
+.herotag:hover .ht-go{transform:translateX(3px)}
+.herotag{padding:16px 40px 16px 16px}
+@media (min-width:821px){.herotag{padding:20px 48px 20px 20px!important}.herotag::before{right:18px}}
+@media (min-width:821px) and (max-width:1240px){.herotag{padding:14px 38px 14px 14px!important}.herotag::before{right:14px}}
+@media (max-width:820px){.herotag{padding:9px 28px 9px 10px!important}.herotag::before{right:10px}}
+
+/* ny räksallad (frilagd) och skarpare tårta */
+#hero[data-mode="lunch"] .obj img.hp{-webkit-mask-image:none!important;mask-image:none!important;translate:0 0!important;width:min(56vmin,620px)!important}
+#hero[data-mode="lunch"]{--iw:min(56vmin,620px)}
+@media (min-width:821px){#hero[data-mode="lunch"] .herotag{top:calc(50% + var(--iw) * .04)!important;right:calc(50% + var(--iw) * .5 - 34px)!important}}
+@media (max-width:820px){
+  #hero[data-mode="lunch"] .herotag{right:auto!important}
+  #hero[data-mode="lunch"] .obj img.hp{width:min(64vw,400px)!important}
+  #hero[data-mode="lunch"]{--iw:min(64vw,400px)}
+  #hero[data-mode="lunch"] .herotag{top:calc(50% + var(--iw) * .05)!important}
+}
+
+/* lite mindre etikett, krymper mot bakverket */
+.herotag{scale:.82;transform-origin:100% 50%}
+@media (max-width:820px){.herotag{scale:.9;transform-origin:0 50%}}
+
+/* bakverket i heron går att klicka på */
+.hero .obj img.hp{pointer-events:auto;cursor:pointer}
+
+/* ---------- Prislapparna i Beställ & hämta: samma hängetikett som i heron ---------- */
+.pk-six .pk-from{display:inline-flex!important;align-items:baseline;gap:6px;background:var(--paper)!important;color:var(--ink)!important;padding:9px 30px 9px 14px!important;border-radius:12px!important;font-size:inherit!important;letter-spacing:0!important;box-shadow:0 14px 26px -16px rgba(1,38,51,.55),0 0 0 1px rgba(1,38,51,.07)!important}
+.pk-six .pk-from::before{content:""!important;position:absolute;right:11px;top:50%;width:8px;height:8px;margin:-4px 0 0!important;border-radius:50%;background:var(--cream);box-shadow:inset 0 1px 2px rgba(1,38,51,.35),0 0 0 1.5px var(--charm);color:transparent}
+.pk-six .pk-from::after{content:"";position:absolute;inset:4px;border:1px dashed rgba(1,111,148,.35);border-radius:8px;pointer-events:none}
+.pk-six .pk-from small{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--charm)}
+.pk-six .pk-from b{font-family:var(--serif);font-style:italic;font-weight:400;font-size:22px;line-height:1;white-space:nowrap}
+.pk-item:hover .pk-from{background:#fff!important;color:var(--ink)!important}
+@media (max-width:820px){
+  .pk-six .pk-from{padding:6px 22px 6px 9px!important;gap:4px;border-radius:10px!important}
+  .pk-six .pk-from::before{right:8px;width:6px;height:6px;margin-top:-3px!important}
+  .pk-six .pk-from::after{inset:3px;border-radius:7px}
+  .pk-six .pk-from small{font-size:7.5px;letter-spacing:.12em}
+  .pk-six .pk-from b{font-size:16px}
+}
+
+/* ---------- Mobil: klistermärket upp i den tomma ytan ovanför rubriken ---------- */
+@media (max-width:820px){
+  .sticker{width:104px!important;top:max(84px, calc(50% - 46vw - 122px))!important;right:16px!important;bottom:auto!important}
+  .sticker .mid em{font-size:12.5px!important}
+}
+
+/* ---------- Klistermärket ersatt av en lugn rad över rubriken ---------- */
+@media (min-width:821px){.hero-eyebrow{display:none!important}}
+@media (max-width:820px){.sticker{display:none!important}}
+.hero-eyebrow{position:absolute;z-index:4;left:0;right:0;top:calc(16vh - 40px);margin:0;display:flex;justify-content:center;align-items:center;gap:14px;pointer-events:none;color:var(--charm);font:600 12px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;white-space:nowrap}
+.hero-eyebrow::before,.hero-eyebrow::after{content:"";width:42px;height:1px;background:currentColor;opacity:.45}
+.hero-eyebrow i{font-style:normal;color:var(--mist);font-size:11px;letter-spacing:0}
+.hero-eyebrow .he-a{font-family:var(--serif);font-style:italic;text-transform:none;letter-spacing:0;font-size:20px;font-weight:400;color:var(--charm)}
+@media (max-width:820px){
+  .hero-type .l1{top:calc(50% - 31vw - 15vw)!important}
+  .hero-eyebrow{top:calc(50% - 46vw - 64px);flex-direction:column;gap:6px;font-size:10px;letter-spacing:.18em}
+  .hero-eyebrow::before,.hero-eyebrow::after,.hero-eyebrow i{display:none}
+  .hero-eyebrow .he-a{font-size:19px;display:flex;align-items:center;gap:10px}
+  .hero-eyebrow .he-a::before,.hero-eyebrow .he-a::after{content:"";width:22px;height:1px;background:currentColor;opacity:.45}
+}
+
+/* tråd från etikettens hål upp till bilden */
+.pk-six .pk-from .pk-str{position:absolute;right:15px;bottom:50%;width:40px;height:52px;overflow:visible;pointer-events:none;z-index:-1}
+.pk-six .pk-from .pk-str path{fill:none;stroke:var(--charm);stroke-width:1.5;stroke-linecap:round}
+.pk-six .pk-from .pk-str{filter:drop-shadow(0 0 1px rgba(255,255,255,.9))}
+.pk-six .pk-from .pk-str circle{fill:var(--charm)}
+@media (max-width:820px){.pk-six .pk-from .pk-str{right:11px;width:26px;height:34px}}
+
+/* prislapparna till vänster om bilden, hålet mot bilden och tråden upp i den (som i heron) */
+.pk-six .pk-from{right:auto!important;left:-6%!important}
+.pk-six .pk-from .pk-str{right:auto!important;left:calc(100% - 15px)}
+@media (max-width:820px){.pk-six .pk-from{left:-10%!important}.pk-six .pk-from .pk-str{left:calc(100% - 11px)}}
+
+/* ---------- Prislappen hänger i en tråd från bildens nederkant ---------- */
+.pk-six .pk-pic{z-index:1}
+.pk-six .pk-from{left:auto!important;bottom:auto!important;right:calc(33% - 12px)!important;top:calc(100% + 18px)!important;transform-origin:calc(100% - 15px) 50%!important}
+.pk-thread{position:absolute;left:calc(67% - 4px);top:96%;width:8px;height:calc(4% + 39px);overflow:visible;z-index:1;pointer-events:none}
+.pk-thread path{fill:none;stroke:var(--charm);stroke-width:1.4;vector-effect:non-scaling-stroke;stroke-linecap:round}
+.pk-knot{position:absolute;left:calc(67% - 3px);top:calc(96% - 3px);width:6px;height:6px;border-radius:50%;background:var(--charm);box-shadow:0 0 0 2px var(--paper);z-index:3;pointer-events:none}
+.pk-six .pk-from{z-index:2}
+@media (min-width:821px){.pk-six .pk-name{margin-top:94px!important}}
+@media (max-width:820px){
+  .pk-six .pk-from{right:calc(33% - 9px)!important;top:calc(100% + 14px)!important;transform-origin:calc(100% - 11px) 50%!important}
+  .pk-thread{left:calc(67% - 3px);width:6px;height:calc(4% + 29px)}
+  .pk-knot{width:5px;height:5px;left:calc(67% - 2.5px);top:calc(96% - 2.5px)}
+  .pk-six .pk-name{margin-top:56px!important}
+}
+
+/* demo-väljaren och raden ovanför rubriken får aldrig krocka */
+@media (max-width:820px){
+  .tidval{top:76px!important}
+  .hero-eyebrow{top:max(calc(50% - 46vw - 64px), 132px)!important}
+}
+
+/* ---------- Utan tråd: etiketten sitter på bildens nedre vänstra kant, hålet mot bilden ---------- */
+.pk-thread,.pk-knot{display:none!important}
+.pk-six .pk-from{right:auto!important;top:auto!important;left:-14%!important;bottom:4%!important;transform-origin:50% 50%!important}
+@media (min-width:821px){.pk-six .pk-name{margin-top:30px!important}}
+@media (max-width:820px){.pk-six .pk-from{left:-16%!important;bottom:0!important}.pk-six .pk-name{margin-top:22px!important}}
+
+/* ---------- Luft runt knappar: samma avstånd överallt ---------- */
+.lmeta:has(.callbtn){margin-top:26px!important}
+.lsoup .lmeta:has(.callbtn){margin-top:20px!important}
+.callbtn.light{margin-top:0!important}
+.cafe .callbtn{margin:20px 0 24px!important}
+.cafe .more{padding-top:14px}
+
+/* jämn rytm i textblocken */
+.lsoup .lmeta{margin-top:14px!important}
+.lsoup .lmeta:has(.callbtn){margin-top:22px!important}
+.cafe .callbtn{margin:22px 0 20px!important}
+.orderband h2 + p,.ob-text h2 + p{margin-top:24px!important}
+.ob-facts{margin-top:24px!important}
+.ob-btn{margin-top:30px!important}
+
+/* menylänkarna exakt i mitten av menyraden */
+@media (min-width:821px){.nav ul{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);margin:0!important}}
 </style>
 </head>
 <body>
 
 <div class="loader" id="loader">
-  <img class="sign" src="https://cafecharm.se/wp-content/uploads/2020/09/charm-logo-vit-768x498.png" alt="Charm">
+  <img class="sign" src="img/charm/charm-logo-vit-768x498.png" alt="Charm">
   <div class="count serif" id="count">0</div>
   <div class="meta label">Konditori · Sundsvall</div>
   <div class="wave"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path fill="#016F94" d="M0 0 H1440 V30 Q1380 70 1320 30 T1200 30 T1080 30 T960 30 T840 30 T720 30 T600 30 T480 30 T360 30 T240 30 T120 30 T0 30Z"/></svg></div>
@@ -914,7 +1139,7 @@ footer .addrs span{white-space:nowrap}
 <div class="cursor" id="cursor"><span></span></div>
 
 <nav class="nav">
-  <a href="#"><img src="https://cafecharm.se/wp-content/uploads/2020/09/charm-logo-vit-300x195.png" alt="Café Charm"></a>
+  <a href="#"><img src="img/charm/charm-logo-vit-300x195.png" alt="Café Charm"></a>
   <ul class="label">
     <li><a href="#lunch">Lunch</a></li>
     <li><a href="bestall.html">Beställ</a></li>
@@ -929,12 +1154,14 @@ footer .addrs span{white-space:nowrap}
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="dark"></div>
+  <p class="hero-eyebrow"><span class="he-a">Bakat lokalt</span><i aria-hidden="true">✦</i><span class="he-b">Konditori, bageri &amp; lunch i Sundsvall</span></p>
   <h1 class="hero-type"><span class="sr">Café Charm – lunch, tårtbeställning och konditori i Sundsvall. </span>
     <span class="l l1"><span>Bakat med</span></span>
     <span class="l l2"><span>charm.</span></span>
   </h1>
   <div class="obj" id="heroObj">
     <img class="hp" id="heroBun" src="img/bulle-hero.png" alt="Kanelbulle från Café Charms bageri i Sundsvall">
+    <a class="herotag" id="heroTag" href="bestall.html#fikabrod" data-cursor="Beställ"><span class="ht-l" id="heroTagLbl">Nybakad kanelbulle</span><span class="ht-p" id="heroTagPrice">28 kr</span><i class="ht-go" aria-hidden="true">→</i></a>
   </div>
   <a class="sticker" href="#sortiment" data-cursor="Smaka" aria-label="Bakat lokalt – konditori, bageri och lunch i Sundsvall. Se sortimentet">
     <span class="disc"></span>
@@ -946,23 +1173,13 @@ footer .addrs span{white-space:nowrap}
     <a class="openchip" href="#cafeer" data-cursor="Visa"><i></i><span id="openChip">Öppettider</span><em>Öppettider ↓</em></a>
   </div>
   <div class="corner r label">Scrolla <i></i></div>
+  <div class="tidval" id="tidval" role="group" aria-label="Visa heron vid olika tider (demo)">
+    <span>Demo: visa</span><button data-m="morgon">Bulle</button><button data-m="lunch">Lunch</button><button data-m="kvall">Tårta</button>
+  </div>
 </section>
 
 <!-- LUNCH + TÅRTA: TYDLIG REKLAM -->
-<section class="promo" aria-label="Lunch och tårtbeställning i Sundsvall">
-  <a class="pcard pcard-lunch" href="#lunch" data-cursor="Lunch">
-    <span class="label">Lunch i Sundsvall</span>
-    <strong>Vardagar 11–14</strong>
-    <p>Fem rätter på Livli. Bröd, kaffe och efterrättsbuffé ingår i priset.</p>
-    <span class="pbtn">Se veckans lunch <b>↓</b></span>
-  </a>
-  <a class="pcard pcard-cake" href="#tarta" data-cursor="Tårta">
-    <span class="label">Tårtbeställning</span>
-    <strong>Tårtor från 159 kr</strong>
-    <p>Till kalas, student och bröllop. Bakade efter dina önskemål i vårt eget bageri.</p>
-    <span class="pbtn">Beställ tårta <b>→</b></span>
-  </a>
-</section>
+
 
 
 <!-- KAFFE: LOOPANDE BAKGRUNDSVIDEO -->
@@ -970,7 +1187,7 @@ footer .addrs span{white-space:nowrap}
   <video id="pourVid" class="bgvid" muted loop playsinline preload="none" poster="video/kaffe-latte-poster.jpg" aria-hidden="true"></video>
   <div class="shade"></div>
   <div class="lines">
-    <div class="line"><h2 class="sr">Välkommen till Café Charm</h2><img class="pour-logo" src="https://cafecharm.se/wp-content/uploads/2020/09/charm-logo-vit-768x498.png" alt="" aria-hidden="true"></div>
+    <div class="line"><h2 class="sr">Välkommen till Café Charm</h2><img class="pour-logo" src="img/charm/charm-logo-vit-768x498.png" alt="" aria-hidden="true"></div>
   <div class="pfacts">
       <div class="pf"><div class="n"><span>1958</span></div><p>Åke och Ann-Marie Engström startar ett litet bageri på Södermalm.</p></div>
       <div class="pf"><div class="n"><span>1984</span></div><p>Första caféet öppnar på Storgatan 34, och vi blir Café Charm.</p></div>
@@ -987,31 +1204,31 @@ footer .addrs span{white-space:nowrap}
   </header>
   <div class="pk-row pk-cats pk-six">
     <a class="pk-item" href="bestall.html#tartor" data-cursor="Beställ">
-      <div class="pk-img fit"><img src="img/tarta-hallon-vit.png" alt="Tårtor från Café Charms konditori" loading="lazy"></div>
-      <span class="pk-name">Tårtor</span><span class="pk-sub">Till kalas, student & bröllop</span><span class="pk-from">från 159 kr</span>
+      <div class="pk-pic"><svg class="pk-thread" viewBox="0 0 10 100" preserveAspectRatio="none" aria-hidden="true"><path d="M5 0 C9 35 1 65 5 100"/></svg><i class="pk-knot" aria-hidden="true"></i><div class="pk-img fit"><img src="img/tarta-hallon-vit.png" alt="Tårtor från Café Charms konditori" loading="lazy"></div><span class="pk-from" style="--r:-6deg"><small>från</small><b>159 kr</b></span></div>
+      <span class="pk-name">Tårtor</span><span class="pk-sub">Till kalas, student & bröllop</span>
     </a>
     <a class="pk-item" href="bestall.html#smorgastartor" data-cursor="Beställ">
-      <div class="pk-img fit"><img src="https://cafecharm.se/wp-content/uploads/2020/11/smorgastarta-lax-rak-300x300.jpg" alt="Smörgåstårta med lax och räkor" loading="lazy"></div>
-      <span class="pk-name">Smörgåstårtor</span><span class="pk-sub">Lax & räk, chark eller vegetarisk</span><span class="pk-from">från 299 kr</span>
+      <div class="pk-pic"><svg class="pk-thread" viewBox="0 0 10 100" preserveAspectRatio="none" aria-hidden="true"><path d="M5 0 C9 35 1 65 5 100"/></svg><i class="pk-knot" aria-hidden="true"></i><div class="pk-img fit"><img src="img/charm/smorgastarta-lax-rak-300x300.jpg" alt="Smörgåstårta med lax och räkor" loading="lazy"></div><span class="pk-from" style="--r:5deg"><small>från</small><b>299 kr</b></span></div>
+      <span class="pk-name">Smörgåstårtor</span><span class="pk-sub">Lax & räk, chark eller vegetarisk</span>
     </a>
     <a class="pk-item" href="bestall.html#fikabrod" data-cursor="Beställ">
-      <div class="pk-img"><img src="img/rund/fikabrod.jpg" alt="Kanelbullar och fikabröd från Café Charm i Sundsvall" loading="lazy"></div>
-      <span class="pk-name">Fikabröd</span><span class="pk-sub">Bullar, längder & kransar</span><span class="pk-from">från 28 kr</span>
+      <div class="pk-pic"><svg class="pk-thread" viewBox="0 0 10 100" preserveAspectRatio="none" aria-hidden="true"><path d="M5 0 C9 35 1 65 5 100"/></svg><i class="pk-knot" aria-hidden="true"></i><div class="pk-img"><img src="img/rund/fikabrod.jpg" alt="Kanelbullar och fikabröd från Café Charm i Sundsvall" loading="lazy"></div><span class="pk-from" style="--r:-4deg"><small>från</small><b>28 kr</b></span></div>
+      <span class="pk-name">Fikabröd</span><span class="pk-sub">Bullar, längder & kransar</span>
     </a>
     <a class="pk-item" href="bestall.html#smorgasar" data-cursor="Beställ">
-      <div class="pk-img"><img src="img/rund/smorgasar.jpg" alt="Räksmörgås och smörgåsar på Café Charm" loading="lazy"></div>
-      <span class="pk-name">Smörgåsar</span><span class="pk-sub">Baguetter, bagels & frallor</span><span class="pk-from">från 37 kr</span>
+      <div class="pk-pic"><svg class="pk-thread" viewBox="0 0 10 100" preserveAspectRatio="none" aria-hidden="true"><path d="M5 0 C9 35 1 65 5 100"/></svg><i class="pk-knot" aria-hidden="true"></i><div class="pk-img"><img src="img/rund/smorgasar.jpg" alt="Räksmörgås och smörgåsar på Café Charm" loading="lazy"></div><span class="pk-from" style="--r:7deg"><small>från</small><b>37 kr</b></span></div>
+      <span class="pk-name">Smörgåsar</span><span class="pk-sub">Baguetter, bagels & frallor</span>
     </a>
     <a class="pk-item" href="bestall.html#sallader" data-cursor="Beställ">
-      <div class="pk-img"><img src="img/rund/caesar.jpg" alt="Caesarsallad med räkor från Café Charm" loading="lazy"></div>
-      <span class="pk-name">Sallader</span><span class="pk-sub">Caesar, lax & räk</span><span class="pk-from">från 119 kr</span>
+      <div class="pk-pic"><svg class="pk-thread" viewBox="0 0 10 100" preserveAspectRatio="none" aria-hidden="true"><path d="M5 0 C9 35 1 65 5 100"/></svg><i class="pk-knot" aria-hidden="true"></i><div class="pk-img"><img src="img/rund/caesar.jpg" alt="Caesarsallad med räkor från Café Charm" loading="lazy"></div><span class="pk-from" style="--r:-5deg"><small>från</small><b>119 kr</b></span></div>
+      <span class="pk-name">Sallader</span><span class="pk-sub">Caesar, lax & räk</span>
     </a>
     <a class="pk-item" href="bestall.html#matbrod" data-cursor="Beställ">
-      <div class="pk-img"><img src="img/rund/matbrod.jpg" alt="Nybakat matbröd från Café Charms bageri" loading="lazy"></div>
-      <span class="pk-name">Matbröd</span><span class="pk-sub">Limpor från eget bageri</span><span class="pk-from">från 47 kr</span>
+      <div class="pk-pic"><svg class="pk-thread" viewBox="0 0 10 100" preserveAspectRatio="none" aria-hidden="true"><path d="M5 0 C9 35 1 65 5 100"/></svg><i class="pk-knot" aria-hidden="true"></i><div class="pk-img"><img src="img/rund/matbrod.jpg" alt="Nybakat matbröd från Café Charms bageri" loading="lazy"></div><span class="pk-from" style="--r:6deg"><small>från</small><b>47 kr</b></span></div>
+      <span class="pk-name">Matbröd</span><span class="pk-sub">Limpor från eget bageri</span>
     </a>
   </div>
-  <a class="pk-btn" href="bestall.html" data-cursor="Beställ">Öppna beställningen <span>→</span></a>
+  <a class="pk-btn" href="bestall.html" data-cursor="Beställ">Se hela sortimentet <span>→</span></a>
 </section>
 
 <!-- LUNCH -->
@@ -1024,11 +1241,11 @@ footer .addrs span{white-space:nowrap}
       <strong>11–14</strong>
     </div>
     <p class="lincl">Fem rätter att välja mellan. Bröd, kaffe och efterrättsbuffé ingår i priset.</p>
-    <p class="lmeta"><a href="tel:060525052">060-52 50 52</a></p>
+    <p class="lmeta"><a class="callbtn light" href="tel:060525052" data-cursor="Ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3.2l1.6 4-2 1.3a11 11 0 0 0 6.9 6.9l1.3-2 4 1.6V19a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg><span>Ring</span><b>060-52 50 52</b></a></p>
     <div class="lsoup">
       <h3>Soppbuffé <em>på Storgatan 34</em></h3>
       <p class="lmeta">Vardagar 11–14</p>
-      <p class="lmeta"><a href="tel:060171280">060-17 12 80</a></p>
+      <p class="lmeta"><a class="callbtn light" href="tel:060171280" data-cursor="Ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3.2l1.6 4-2 1.3a11 11 0 0 0 6.9 6.9l1.3-2 4 1.6V19a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg><span>Ring</span><b>060-17 12 80</b></a></p>
     </div>
   </div></div>
   <div class="menu-side">
@@ -1040,7 +1257,6 @@ footer .addrs span{white-space:nowrap}
       <li class="dish"><h3>Dagens sallader</h3><span class="pr">125 / 129 kr</span><p>Kombinera din egen sallad av dagens alternativ, med kyckling eller räkor</p></li>
     </ul>
     <div class="kids"><h3>Barnmeny <em>89 kr</em></h3><p>Inklusive festis eller mjölk. Enchiladas, lasagne, pannkaka med grädde och sylt, eller sallad av dagens alternativ.</p></div>
-  <a class="lunchall label" href="#" data-demo data-cursor="Lunch">Hela lunchmenyn →</a>
   </div>
 </section>
 
@@ -1082,14 +1298,14 @@ footer .addrs span{white-space:nowrap}
 
 <!-- CAFÉER -->
 <section class="cafes" id="cafeer">
-  <h2>Fyra caféer,<br><em>ett nära dig.</em></h2>
+  <h2>Hitta <em>ditt Charm.</em></h2>
   <div class="grid" id="grid"></div>
 </section>
 
 <footer>
   <div class="wave"><svg viewBox="0 0 2880 70" preserveAspectRatio="none"><path fill="#012633" d="M0 40 Q60 10 120 40 T240 40 T360 40 T480 40 T600 40 T720 40 T840 40 T960 40 T1080 40 T1200 40 T1320 40 T1440 40 T1560 40 T1680 40 T1800 40 T1920 40 T2040 40 T2160 40 T2280 40 T2400 40 T2520 40 T2640 40 T2760 40 T2880 40 V70 H0Z"/></svg></div>
   <div class="ftop">
-    <img class="flogo" src="https://cafecharm.se/wp-content/uploads/2020/09/charm-logo-vit-768x498.png" alt="Café Charm">
+    <img class="flogo" src="img/charm/charm-logo-vit-768x498.png" alt="Café Charm">
     <div class="social">
       <span class="label">Följ oss</span>
       <a href="https://www.facebook.com/Caf%C3%A9-Charm-184005558404326/" target="_blank" rel="noopener" aria-label="Café Charm på Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H7.9v3h2.6V21h3z"/></svg></a>
@@ -1127,7 +1343,53 @@ document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click
 }));
 
 /* ---------- Loader: räknar faktisk bildladdning ---------- */
-const srcs = ['img/bulle-hero.png'];
+/* ---------- Heron följer dagen: bulle på morgonen, lunch mitt på dagen, fika på eftermiddagen, tårta på kvällen ---------- */
+const HERO_MODES = {
+  morgon:{img:'img/bulle-hero.png', alt:'Nybakad kanelbulle från Café Charms bageri i Sundsvall', lbl:'Nybakad kanelbulle', price:'28 kr', href:'bestall.html#fikabrod'},
+  lunch:{img:'img/hero-lunch.png', alt:'Caesarsallad med räkor, lunch på Café Charm i Sundsvall', lbl:'Lunch vardagar 11–14', price:'från 125 kr', href:'#lunch'},
+  kvall:{img:'img/tarta-hero-hd.png', alt:'Gräddtårta med hallon från Café Charms konditori', lbl:'Beställ tårta', price:'från 159 kr', href:'bestall.html#tartor'}
+};
+function modeNow(){
+  const d = new Date(), h = d.getHours() + d.getMinutes()/60, wd = d.getDay(), weekday = wd >= 1 && wd <= 5;
+  if (h >= 6 && h < 11) return 'morgon';
+  if (h >= 11 && h < 14) return weekday ? 'lunch' : 'morgon';
+  if (h >= 14 && h < 18) return 'morgon';
+  return 'kvall';
+}
+const DEMO_Q = new URLSearchParams(location.search);
+let heroMode = HERO_MODES[DEMO_Q.get('tid')] ? DEMO_Q.get('tid') : 'morgon'; // bullen är huvudbilden; modeNow() finns kvar om heron ska följa klockan
+function paintHero(m){
+  const M = HERO_MODES[m], img = document.getElementById('heroBun'), tag = document.getElementById('heroTag');
+  img.src = M.img; img.alt = M.alt;
+  document.getElementById('hero').dataset.mode = m;
+  document.getElementById('heroTagLbl').textContent = M.lbl; document.getElementById('heroTagPrice').textContent = M.price; tag.href = M.href;
+  document.querySelectorAll('#tidval button').forEach(b => b.classList.toggle('on', b.dataset.m === m));
+}
+paintHero(heroMode);
+function switchHero(m){
+  if (m === heroMode) return; heroMode = m;
+  const img = document.getElementById('heroBun'), M = HERO_MODES[m];
+  const pre = new Image(); pre.src = M.img;
+  gsap.to([img, '#heroTag'], {opacity:0, scale:.82, duration:.3, ease:'power2.in', onComplete:() => {
+    const go = () => { paintHero(m); gsap.to([img, '#heroTag'], {opacity:1, scale:1, duration:.7, ease:'back.out(1.6)'}); };
+    pre.complete ? go() : (pre.onload = pre.onerror = go);
+  }});
+}
+document.getElementById('tidval').classList.add('show');
+addEventListener('keydown', e => { if ((e.key === 't' || e.key === 'T') && !e.metaKey && !e.ctrlKey && !/input|textarea/i.test(e.target.tagName)) document.getElementById('tidval').classList.toggle('show'); });
+/* klick på bakverket går till samma ställe som etiketten: bullen till fikabröd, tårtan till tårtorna */
+(() => {
+  const img = document.getElementById('heroBun');
+  img.setAttribute('data-cursor','Beställ');
+  img.addEventListener('click', () => {
+    const href = HERO_MODES[heroMode].href;
+    if (href.startsWith('#')){ const t = document.querySelector(href); if (t) (lenis ? lenis.scrollTo(t) : t.scrollIntoView({behavior:'smooth'})); }
+    else location.href = href;
+  });
+})();
+document.getElementById('tidval').addEventListener('click', e => { const b = e.target.closest('button'); if (b) switchHero(b.dataset.m); });
+
+const srcs = [HERO_MODES[heroMode].img];
 // introt visas i sin helhet bara vid första besöket i sessionen, sen går det snabbt
 const SEEN = (() => { try { return sessionStorage.getItem('charmSeen') === '1'; } catch(e){ return false; } })();
 try { sessionStorage.setItem('charmSeen','1'); } catch(e){}
@@ -1156,6 +1418,7 @@ function intro(){
     .from('#heroObj', {scale:1.35, y:120, rotate:-30, duration:1.8, ease:'expo.out', clearProps:'transform'}, '-=.9')
     .from('.hero-type .l span', {yPercent:110, opacity:0, duration:1.4, ease:'expo.out', stagger:.12}, '<.15')
     .from('.hero .corner, .nav', {opacity:0, duration:1}, '<.4')
+    .from('.hero-eyebrow', {opacity:0, y:14, duration:1, ease:'power3.out'}, '<')
     .fromTo('.sticker', {scale:0, rotate:-120}, {scale:1, rotate:-8, duration:1.2, ease:'back.out(1.8)'}, '<.3');
 }
 
@@ -1221,7 +1484,7 @@ gsap.from('.pk-item', {y:70, opacity:0, duration:1.4, ease:'expo.out', stagger:.
 gsap.utils.toArray('.cafes h2').forEach(h => gsap.from(h, {y:80, opacity:0, duration:1.4, ease:'expo.out', scrollTrigger:{trigger:h, start:'top 85%'}}));
 
 /* ---------- Caféer med öppet-status ---------- */
-const U = 'https://cafecharm.se/wp-content/uploads/';
+const U = 'img/charm/';
 const cafes = [
   {id:'storgatan', n:'Storgatan', a:'Storgatan 34', t:'060-17 12 80', e:'storgatan@cafecharm.se', img:'2020/09/storgatan-300x300.jpg', tags:['Soppbuffé 11–14'],
    d:'Ett mysigt konditori mitt på Storgatan med uteservering på sommaren. Måndag till fredag dukar vi upp vår populära soppbuffé, som serveras mellan 11.00 och 14.00.', h:{v:[8,18], l:[9.5,17], s:[11,17]}},
@@ -1246,10 +1509,11 @@ function renderCafes(){
     const row = (k,l) => `<span class="${k===key?'today':''}">${l}</span><span class="${k===key?'today':''}">${fmt(c.h[k][0])}–${fmt(c.h[k][1])}</span>`;
     const tags = c.tags.map(tg => `<span class="ctag" style="--r:${[-6,5,-4,7][ci%4]}deg">${tg}</span>`).join('');
     return `<article class="cafe">
-      <div class="phwrap"><div class="ph"><img loading="lazy" src="${U+c.img}" alt="Café Charm ${c.n}"></div><span class="cstat ${isOpen?'open':'shut'}" style="--r:${[8,-6,5,-9][ci%4]}deg"><svg viewBox="0 0 100 100" aria-hidden="true"><defs><path id="ring-${c.id}" d="M50 50 m-40.5 0 a40.5 40.5 0 1 1 81.0 0 a40.5 40.5 0 1 1 -81.0 0 a40.5 40.5 0 1 1 81.0 0 a40.5 40.5 0 1 1 -81.0 0"/></defs><text text-anchor="middle"><textPath href="#ring-${c.id}" startOffset="63.62">${ring}</textPath><textPath href="#ring-${c.id}" startOffset="127.23" class="st">✦</textPath><textPath href="#ring-${c.id}" startOffset="190.85">${ring}</textPath><textPath href="#ring-${c.id}" startOffset="254.47" class="st">✦</textPath></text></svg><b>${isOpen?'Öppet':'Stängt'}</b></span>${tags}</div>
+      <div class="phwrap"><div class="ph"><img loading="lazy" src="${U+c.img.split('/').pop()}" alt="Café Charm ${c.n}"></div><span class="cstat ${isOpen?'open':'shut'}" style="--r:${[8,-6,5,-9][ci%4]}deg"><svg viewBox="0 0 100 100" aria-hidden="true"><defs><path id="ring-${c.id}" d="M50 50 m-40.5 0 a40.5 40.5 0 1 1 81.0 0 a40.5 40.5 0 1 1 -81.0 0 a40.5 40.5 0 1 1 81.0 0 a40.5 40.5 0 1 1 -81.0 0"/></defs><text text-anchor="middle"><textPath href="#ring-${c.id}" startOffset="63.62">${ring}</textPath><textPath href="#ring-${c.id}" startOffset="127.23" class="st">✦</textPath><textPath href="#ring-${c.id}" startOffset="190.85">${ring}</textPath><textPath href="#ring-${c.id}" startOffset="254.47" class="st">✦</textPath></text></svg><b>${isOpen?'Öppet':'Stängt'}</b></span>${tags}</div>
       <h3>${c.n}</h3>
       <div class="hours">${row('v','Vardagar')}${row('l','Lördag')}${row('s','Söndag')}</div>
-      <div class="addr"><span>${c.a}, Sundsvall</span><a href="tel:${c.t.replace(/\D/g,'')}" data-cursor="Ring">${c.t}</a></div>
+      <div class="addr"><span>${c.a}, Sundsvall</span></div>
+      <a class="callbtn" href="tel:${c.t.replace(/\D/g,'')}" data-cursor="Ring" aria-label="Ring Café Charm ${c.n}, ${c.t}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3.2l1.6 4-2 1.3a11 11 0 0 0 6.9 6.9l1.3-2 4 1.6V19a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg><span>Ring</span><b>${c.t}</b></a>
       <details class="more" data-id="${c.id}"${openMore.has(c.id)?' open':''}>
         <summary>Läs mer <b>+</b></summary>
         <div class="more-body">
